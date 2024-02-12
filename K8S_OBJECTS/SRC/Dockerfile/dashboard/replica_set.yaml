@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: dashboard03
+spec:
+  selector:
+    matchLabels:
+      app: dashboard03
+  template:
+    metadata:
+      labels:
+        app: dashboard03
+    spec:
+      containers:
+      - name: dashboard03
+        image: harshitameshram/k8s_objects:v2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

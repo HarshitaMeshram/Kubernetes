@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: search03
+spec:
+  replicas: 2
+  selector:
+    app: search03
+  template:
+    metadata:
+      name: search03
+      labels:
+        app: search03
+    spec:
+      containers:
+        - name: search03
+          image: harshitameshram/k8s_objects:v3
+          ports:
+            - containerPort: 80

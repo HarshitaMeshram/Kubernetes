@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login04
+spec:
+  selector:
+    matchLabels:
+      app: login04
+  template:
+    metadata:
+      labels:
+        app: login04
+    spec:
+      containers:
+      - name: login04
+        image: harshitameshram/k8s_objects:v3
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

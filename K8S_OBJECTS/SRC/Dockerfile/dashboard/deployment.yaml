@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dashboard01
+spec:
+  selector:
+    matchLabels:
+      app: dashboard01
+  template:
+    metadata:
+      labels:
+        app: dashboard01
+    spec:
+      containers:
+      - name: dashboard01
+        image: harshitameshram/k8s_objects:v2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: submit01
+spec:
+  selector:
+    matchLabels:
+      app: submit01
+  template:
+    metadata:
+      labels:
+        app: submit01
+    spec:
+      containers:
+      - name: submit01
+        image: harshitameshram/k8s_objects:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

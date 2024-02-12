@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: submit02
+  labels:
+    name: submit02
+spec:
+  containers:
+  - name: submit02
+    image: harshitameshram/k8s_objects:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80

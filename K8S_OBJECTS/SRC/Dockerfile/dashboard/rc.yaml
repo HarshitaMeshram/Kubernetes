@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: dashboard02
+spec:
+  replicas: 2
+  selector:
+    app: dashboard02
+  template:
+    metadata:
+      name: dashboard02
+      labels:
+        app: dashboard02
+    spec:
+      containers:
+        - name: dashboard02
+          image: harshitameshram/k8s_objects:v2
+          ports:
+            - containerPort: 80

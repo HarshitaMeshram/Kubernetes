@@ -1,0 +1,14 @@
+# pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-dashboard
+  labels:
+    app: dashboard
+spec:
+  containers:
+  - name: myapp-dashboard
+    image: harshitameshram/k8s_objects:v2
+    ports:
+    - containerPort: 80

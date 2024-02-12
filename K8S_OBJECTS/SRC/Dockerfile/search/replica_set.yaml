@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind:  ReplicaSet
+metadata:
+  name: search04
+spec:
+  selector:
+    matchLabels:
+      app: search04
+  template:
+    metadata:
+      labels:
+        app: search04
+    spec:
+      containers:
+      - name: search04
+        image: harshitameshram/k8s_objects:v4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
